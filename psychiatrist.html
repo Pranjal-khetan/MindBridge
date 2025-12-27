@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Psychiatrist - MindBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/psychiatrist.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>MindBridge</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="psychiatrist-hero">
+            <div class="container">
+                <h1>Connect with Professional Psychiatrists</h1>
+                <p>Schedule a session with licensed mental health professionals</p>
+            </div>
+        </section>
+
+        <section class="psychiatrist-list">
+            <div class="container">
+                <h2>Our Available Psychiatrists</h2>
+                <div class="psychiatrists-grid">
+                    <div class="psychiatrist-card">
+                        <div class="psychiatrist-image">
+                            <div class="image-placeholder">👨‍⚕️</div>
+                        </div>
+                        <div class="psychiatrist-info">
+                            <h3>Dr. Sarah Johnson</h3>
+                            <p class="specialty">Specialization: Depression & Anxiety</p>
+                            <p class="experience">15+ years experience</p>
+                            <p class="description">Expert in cognitive behavioral therapy and mindfulness-based approaches for treating depression and anxiety disorders.</p>
+                            <button class="btn btn-primary" onclick="openBookingModal('Dr. Sarah Johnson')">Book Session</button>
+                        </div>
+                    </div>
+
+                    <div class="psychiatrist-card">
+                        <div class="psychiatrist-image">
+                            <div class="image-placeholder">👩‍⚕️</div>
+                        </div>
+                        <div class="psychiatrist-info">
+                            <h3>Dr. Michael Chen</h3>
+                            <p class="specialty">Specialization: Stress Management</p>
+                            <p class="experience">12+ years experience</p>
+                            <p class="description">Specializes in helping working professionals manage stress, burnout, and work-life balance issues.</p>
+                            <button class="btn btn-primary" onclick="openBookingModal('Dr. Michael Chen')">Book Session</button>
+                        </div>
+                    </div>
+
+                    <div class="psychiatrist-card">
+                        <div class="psychiatrist-image">
+                            <div class="image-placeholder">👨‍⚕️</div>
+                        </div>
+                        <div class="psychiatrist-info">
+                            <h3>Dr. Emily Rodriguez</h3>
+                            <p class="specialty">Specialization: Teen Mental Health</p>
+                            <p class="experience">10+ years experience</p>
+                            <p class="description">Focused on adolescent mental health, helping teenagers navigate depression, peer pressure, and identity issues.</p>
+                            <button class="btn btn-primary" onclick="openBookingModal('Dr. Emily Rodriguez')">Book Session</button>
+                        </div>
+                    </div>
+
+                    <div class="psychiatrist-card">
+                        <div class="psychiatrist-image">
+                            <div class="image-placeholder">👩‍⚕️</div>
+                        </div>
+                        <div class="psychiatrist-info">
+                            <h3>Dr. James Wilson</h3>
+                            <p class="specialty">Specialization: Trauma & PTSD</p>
+                            <p class="experience">18+ years experience</p>
+                            <p class="description">Experienced in trauma-informed care and evidence-based treatments for PTSD and emotional healing.</p>
+                            <button class="btn btn-primary" onclick="openBookingModal('Dr. James Wilson')">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-info">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Choose Your Psychiatrist</h4>
+                        <p>Browse through our qualified professionals and select one that matches your needs</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Schedule a Session</h4>
+                        <p>Pick a convenient time slot and provide basic information</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Attend Your Session</h4>
+                        <p>Meet with your psychiatrist via secure video call or in-person</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Continue Your Journey</h4>
+                        <p>Follow up with regular sessions and track your progress</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book a Session</h2>
+            <form id="bookingForm" onsubmit="handleBooking(event)">
+                <div class="form-group">
+                    <label for="doctorName">Psychiatrist:</label>
+                    <input type="text" id="doctorName" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="patientName">Your Name:</label>
+                    <input type="text" id="patientName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientEmail">Email:</label>
+                    <input type="email" id="patientEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientPhone">Phone Number:</label>
+                    <input type="tel" id="patientPhone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Date:</label>
+                    <input type="date" id="preferredDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredTime">Preferred Time:</label>
+                    <select id="preferredTime" required>
+                        <option value="">Select a time</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                        <option value="17:00">05:00 PM</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sessionType">Session Type:</label>
+                    <select id="sessionType" required>
+                        <option value="">Select session type</option>
+                        <option value="video">Video Call</option>
+                        <option value="in-person">In-Person</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional):</label>
+                    <textarea id="notes" rows="4" placeholder="Any specific concerns or topics you'd like to discuss..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-modal">
+            <span class="close" onclick="closeSuccessModal()">&times;</span>
+            <div class="success-icon">✓</div>
+            <h2>Booking Confirmed!</h2>
+            <p>Your session has been scheduled successfully.</p>
+            <p>You will receive a confirmation email with further details.</p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MindBridge - Google TechSprint Hackathon Project</p>
+        </div>
+    </footer>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/psychiatrist.js"></script>
+</body>
+</html>

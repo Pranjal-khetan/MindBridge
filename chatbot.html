@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Support - MindBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>MindBridge</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="chat-main">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>AI Mental Health Support</h2>
+                <p class="chat-subtitle">Share your feelings. I'm here to listen and help.</p>
+                <div class="api-key-section" id="apiKeySection">
+                    <p class="api-notice">Please enter your Gemini API key to start chatting:</p>
+                    <div class="api-input-group">
+                        <input type="password" id="apiKeyInput" placeholder="Enter your Gemini API key" />
+                        <button onclick="saveApiKey()" class="btn-api-save">Save</button>
+                    </div>
+                    <p class="api-help">Get your API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></p>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hello! I'm here to support you. How are you feeling today?</p>
+                    </div>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea 
+                        id="userInput" 
+                        placeholder="Type your message here..." 
+                        rows="1"
+                        disabled
+                    ></textarea>
+                    <button id="sendButton" onclick="sendMessage()" disabled>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <p class="disclaimer">This chatbot provides support but is not a substitute for professional mental health care.</p>
+            </div>
+        </div>
+
+        <div class="chat-sidebar">
+            <div class="sidebar-content">
+                <h3>Quick Tips</h3>
+                <ul class="tips-list">
+                    <li>Take your time to express yourself</li>
+                    <li>Be honest about your feelings</li>
+                    <li>There's no judgment here</li>
+                    <li>You can share as much or as little as you want</li>
+                </ul>
+
+                <div class="emergency-box">
+                    <h4>⚠️ In Crisis?</h4>
+                    <p>If you're having thoughts of self-harm, please call:</p>
+                    <p class="emergency-number">988</p>
+                    <p class="emergency-label">Suicide & Crisis Lifeline</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
